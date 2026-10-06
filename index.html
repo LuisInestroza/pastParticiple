@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>English Verb Quiz</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+  <div class="top"><div class="brand">English Verb Quiz</div><div class="badge" id="mode">221 verbos</div></div>
+  <section class="card" id="quizCard">
+    <div class="hero"><h1>Past Participle Quiz</h1><p class="sub">Lee el significado en español y escribe únicamente el <b>pasado participio</b> en inglés.</p></div>
+    <div class="progress-wrap"><div class="progress"><span id="bar"></span></div></div>
+    <div class="quiz">
+      <div class="question-label" id="counter">Pregunta 1 de 221</div>
+      <div class="meaning" id="meaning">—</div>
+      <div class="participle-reveal" id="participle" aria-live="polite"></div>
+      <div class="hint" id="hint">Puedes intentarlo nuevamente si te equivocas.</div>
+      <input class="input" id="answer" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Escribe el participio..." aria-label="Respuesta">
+      <div class="actions">
+        <button class="check" id="check">✓ Verificar</button>
+        <button class="show" id="show">👁 Mostrar respuesta</button>
+        <button class="next" id="next" disabled>→ Siguiente</button>
+      </div>
+      <div class="feedback" id="feedback"></div>
+      <div class="stats"><div class="stat">Aciertos <b id="score">0</b></div><div class="stat">Intentos <b id="attempts">0</b></div><div class="stat">Progreso <b id="percent">0%</b></div></div>
+    </div>
+  </section>
+  <section class="card end" id="endCard"><h2>¡Quiz terminado!</h2><p class="sub">Completaste todos los verbos de la lista.</p><div class="score" id="finalScore">0 / 221</div><p class="sub" id="finalText"></p><button class="restart" id="restart">↻ Volver a empezar</button></section>
+  <div class="footer">Basado en la lista de verbos proporcionada para este quiz.</div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

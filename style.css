@@ -1,0 +1,29 @@
+:root{--bg:#0b1220;--card:#111a2b;--card2:#17233a;--text:#f7f9fc;--muted:#9eabc1;--accent:#66e3a4;--accent2:#5ea8ff;--danger:#ff6b7a;--border:#263552;--shadow:0 24px 70px rgba(0,0,0,.35)}
+*{box-sizing:border-box} body{margin:0;min-height:100vh;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(circle at 50% -10%,#1c3155 0,#0b1220 48%);color:var(--text);display:flex;justify-content:center;padding:32px 16px}
+.app{width:min(820px,100%)} .top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px} .brand{font-weight:800;letter-spacing:.2px;font-size:20px} .badge{border:1px solid var(--border);background:#101a2d;padding:8px 12px;border-radius:999px;color:var(--muted);font-size:13px}
+.card{background:rgba(17,26,43,.94);border:1px solid var(--border);border-radius:24px;box-shadow:var(--shadow);overflow:hidden} .hero{padding:34px 34px 22px;text-align:center} h1{font-size:34px;margin:0 0 8px} .sub{color:var(--muted);margin:0 auto;max-width:620px;line-height:1.5}
+.progress-wrap{padding:0 34px} .progress{height:8px;background:#0b1322;border-radius:999px;overflow:hidden} .progress>span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent2),var(--accent));border-radius:inherit;transition:width .25s ease}
+.quiz{padding:30px 34px 34px} .question-label{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;text-align:center} .meaning{margin:10px 0 26px;text-align:center;font-size:clamp(27px,5vw,42px);font-weight:800;line-height:1.15} .hint{text-align:center;min-height:24px;color:var(--muted);font-size:14px;margin-top:-12px;margin-bottom:14px}
+.input{width:100%;background:#0c1526;color:var(--text);border:2px solid var(--border);border-radius:16px;padding:17px 18px;font-size:20px;outline:none;text-align:center;transition:.2s} .input:focus{border-color:var(--accent2);box-shadow:0 0 0 4px rgba(94,168,255,.12)} .input.correct{border-color:var(--accent);box-shadow:0 0 0 4px rgba(102,227,164,.1)} .input.wrong{border-color:var(--danger);animation:shake .25s linear}
+.actions{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:16px} button{border:0;border-radius:14px;padding:14px 12px;font-weight:800;font-size:15px;cursor:pointer;transition:transform .12s,opacity .12s,background .12s} button:hover:not(:disabled){transform:translateY(-1px)} button:disabled{opacity:.42;cursor:not-allowed} .check{background:var(--accent);color:#07140e} .show{background:#263753;color:#fff} .next{background:var(--accent2);color:#06111f}
+.feedback{min-height:54px;margin-top:18px;border-radius:14px;padding:14px 16px;display:none;text-align:center;font-weight:700} .feedback.ok{display:block;background:rgba(102,227,164,.1);color:var(--accent);border:1px solid rgba(102,227,164,.25)} .feedback.bad{display:block;background:rgba(255,107,122,.1);color:#ff9aa5;border:1px solid rgba(255,107,122,.22)} .feedback.answer{display:block;background:rgba(94,168,255,.1);color:#9ecbff;border:1px solid rgba(94,168,255,.22)}
+.stats{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:22px} .stat{background:#0d1728;border:1px solid var(--border);border-radius:12px;padding:9px 13px;color:var(--muted);font-size:13px} .stat b{color:var(--text);margin-left:5px} .end{padding:42px 34px;text-align:center;display:none} .end h2{font-size:34px;margin:0 0 10px} .score{font-size:52px;font-weight:900;margin:18px 0;color:var(--accent)} .restart{background:var(--accent2);color:#06111f;padding:15px 24px}
+.footer{text-align:center;color:#71809a;font-size:12px;margin-top:16px} @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+@media(max-width:650px){body{padding:18px 10px} .hero,.quiz,.end{padding-left:18px;padding-right:18px} .progress-wrap{padding:0 18px} .actions{grid-template-columns:1fr} h1{font-size:28px} .top{margin-bottom:14px}}
+
+/* Participio mostrado al responder correctamente */
+.participle-reveal{
+  min-height: 34px;
+  margin: -12px 0 22px;
+  text-align: center;
+  font-size: clamp(22px,4vw,30px);
+  font-weight: 800;
+  color: var(--accent);
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity .2s ease, transform .2s ease;
+}
+.participle-reveal.visible{
+  opacity: 1;
+  transform: translateY(0);
+}
